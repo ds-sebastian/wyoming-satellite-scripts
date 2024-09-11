@@ -53,7 +53,7 @@ SNAPCAST_VERSION_NO_V="${SNAPCAST_VERSION#v}"
 ARCH=$(dpkg --print-architecture)
 
 wget https://github.com/badaix/snapcast/releases/download/${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION_NO_V}-1_${ARCH}_bookworm_with-pulse.deb
-sudo dpkg -i snapclient_${SNAPCAST_VERSION}-1_${ARCH}.deb
+sudo dpkg -i snapclient_${SNAPCAST_VERSION_NO_V}-1_${ARCH}_bookworm_with-pulse.deb
 sudo apt-get install -f
 
 # Configure Snapcast client
