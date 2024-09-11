@@ -46,7 +46,10 @@ sudo sed -i '/^pulse-access:/ s/$/root,pi,snapclient,'"$USER"'/' /etc/group
 echo "load-module module-role-ducking trigger_roles=announce,phone,notification,event ducking_roles=any_role volume=33%" | sudo tee -a /etc/pulse/system.pa
 
 echo "${YELLOW}Installing Snapcast client...${RESET}"
-SNAPCAST_VERSION=$(curl -s https://api.github.com/repos/badaix/snapcast/releases/latest | grep 'tag_name' | sed -E 's/.*"v?([^"]+)".*/\1/')
+SNAPCAST_VERSION=$(curl -s https://api.github.com/repos/badaix/snapcast/releases/latest | grep 'tag_name' | sed -E 's/.*"([^"]+)".*/\1/')
+SNAPCAST_VERSION_NO_V="${SNAPCAST_VERSION#v}"
+
+
 ARCH=$(dpkg --print-architecture)
 
 wget https://github.com/badaix/snapcast/releases/download/${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_${ARCH}_bookworm_with-pulse.deb
