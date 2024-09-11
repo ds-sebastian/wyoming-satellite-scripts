@@ -27,6 +27,7 @@ echo "${YELLOW}Cloning repos...${RESET}"
 git clone https://github.com/rhasspy/wyoming-satellite.git
 git clone https://github.com/rhasspy/wyoming-openwakeword.git
 git clone https://github.com/fwartner/home-assistant-wakewords-collection.git
+git clone https://github.com/FutureProofHomes/wyoming-enhancements.git
 
 echo "..."
 echo "${YELLOW}Installing speaker drivers...${RESET}"
