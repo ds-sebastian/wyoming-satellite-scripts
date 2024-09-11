@@ -49,7 +49,7 @@ echo "${YELLOW}Installing Snapcast client...${RESET}"
 SNAPCAST_VERSION=$(curl -s https://api.github.com/repos/badaix/snapcast/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')
 ARCH=$(dpkg --print-architecture)
 
-wget https://github.com/badaix/snapcast/releases/download/${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_${ARCH}.deb
+wget https://github.com/badaix/snapcast/releases/download/${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_${ARCH}_bookworm_with-pulse.deb
 sudo dpkg -i snapclient_${SNAPCAST_VERSION}-1_${ARCH}.deb
 sudo apt-get install -f
 
