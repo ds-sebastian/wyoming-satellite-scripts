@@ -47,7 +47,7 @@ echo "load-module module-role-ducking trigger_roles=announce,phone,notification,
 
 echo "${YELLOW}Installing Snapcast client...${RESET}"
 SNAPCAST_VERSION=$(curl -s https://api.github.com/repos/badaix/snapcast/releases/latest | grep 'tag_name' | sed -E 's/.*"([^"]+)".*/\1/')
-SNAPCAST_VERSION_NO_V="${SNAPCAST_VERSION#v}"
+SNAPCAST_VERSION_NO_V=$(echo "$SNAPCAST_VERSION" | sed 's/^v//')
 
 
 ARCH=$(dpkg --print-architecture)
